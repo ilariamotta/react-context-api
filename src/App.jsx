@@ -8,6 +8,7 @@ import Prodotti from './pages/Prodotti'
 import DefaultLayout from './layout/DefaultLayout'
 import ProdottoSingolo from './pages/ProdottoSingolo'
 import { Navigate } from "react-router-dom";
+import BudgetProvider from './components/BudgetContext'
 
 
 function App() {
@@ -15,6 +16,7 @@ function App() {
 
   return (
     <>
+    <BudgetProvider>
       <BrowserRouter>
         <Routes>
           <Route element={<DefaultLayout />}>
@@ -26,6 +28,7 @@ function App() {
             </Route>
         </Routes>
       </BrowserRouter>
+      </BudgetProvider>
     </>
   )
 }
