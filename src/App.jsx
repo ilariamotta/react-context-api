@@ -16,8 +16,9 @@ function App() {
 
   return (
     <>
-    <BudgetProvider>
+    
       <BrowserRouter>
+      <BudgetProvider>
         <Routes>
           <Route element={<DefaultLayout />}>
             <Route path="/" element={<Homepage />} />
@@ -27,8 +28,9 @@ function App() {
             <Route path="*" element={<Navigate to="/prodotti" />} />
             </Route>
         </Routes>
+        </BudgetProvider>
       </BrowserRouter>
-      </BudgetProvider>
+      
     </>
   )
 }

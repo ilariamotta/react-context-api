@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { Link, NavLink } from "react-router-dom";
-import { BudgetEconomicContext } from "../context/BudgetContext";
+import { useBudget } from "../context/BudgetContext";
 
 export default function NavBar() {
     const links = [
@@ -18,8 +18,8 @@ export default function NavBar() {
         },
     ];
 
-    const { budgetMode, setBudgetMode } = useContext(BudgetEconomicContext);
-
+    const { budgetMode, attivaBudget, disattivaBudget } = useBudget();
+  console.log("BUDGET MODE NAVBAR:", budgetMode);
 
     return (
         <>
@@ -30,7 +30,7 @@ export default function NavBar() {
                     )
                 })}
             </ul>
-            <button className="btn btn-outline-dark" onClick={() => }><i className="bi-currency-dollar"></i>Modalità Budget</button>
+            <button className={`btn ${budgetMode ? "btn-success" : "btn-outline-dark"}`} onClick={() => (budgetMode === true ? disattivaBudget() : attivaBudget())}><i className="bi bi-currency-dollar"></i>Modalità Budget</button>
             </>
     )
 }
