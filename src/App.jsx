@@ -8,7 +8,7 @@ import Prodotti from './pages/Prodotti'
 import DefaultLayout from './layout/DefaultLayout'
 import ProdottoSingolo from './pages/ProdottoSingolo'
 import { Navigate } from "react-router-dom";
-import BudgetProvider from './components/BudgetContext'
+import BudgetProvider from './context/BudgetContext'
 
 
 function App() {
