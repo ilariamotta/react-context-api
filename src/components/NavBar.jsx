@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { Link, NavLink } from "react-router-dom";
+import { BudgetEconomicContext } from "../context/BudgetContext";
 
 export default function NavBar() {
     const links = [
@@ -16,7 +17,12 @@ export default function NavBar() {
             path: "/prodotti",
         },
     ];
+
+    const { budgetMode, setBudgetMode } = useContext(BudgetEconomicContext);
+
+
     return (
+        <>
         <ul className="d-flex justify-content-between gap-5">
                 {links.map((link, index) => {
                     return (
@@ -24,6 +30,9 @@ export default function NavBar() {
                     )
                 })}
             </ul>
-
+            <button className="btn btn-outline-dark" onClick={() => }><i className="bi-currency-dollar"></i>Modalità Budget</button>
+            </>
     )
 }
+
+
