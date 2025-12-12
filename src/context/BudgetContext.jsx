@@ -7,6 +7,7 @@ const BudgetEconomicContext = createContext();
 export default function BudgetProvider({children}) {
     const [budgetMode, setBudgetMode] = useState(false)
 
+
     function attivaBudget() {
         setBudgetMode(true)
     }
@@ -15,8 +16,10 @@ export default function BudgetProvider({children}) {
         setBudgetMode(false)
     }
 
+
+
     const contextValue = {
-        budgetMode, attivaBudget, disattivaBudget,
+        budgetMode, attivaBudget, disattivaBudget
     }
 
 

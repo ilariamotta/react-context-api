@@ -2,6 +2,7 @@ import { useEffect } from "react"
 import { useState } from "react"
 import axios from "axios"
 import Card from "../components/Card"
+import { useBudget } from "../context/BudgetContext"
 
 export default function Prodotti() {
 const [prodotti, setNewProdotti] = useState([])
@@ -11,13 +12,17 @@ const [prodotti, setNewProdotti] = useState([])
         })
     }, [])
 
+const { budgetMode } = useBudget()
+
+    const prodottiFiltrati = budgetMode ? prodotti.filter((curProdotto) => curProdotto.price <= 30) : prodotti 
+
     return (
         <div className="container">
             <h1 className="padding-150">I nostri prodotti in evidenza</h1>
             <div className="row">
             
             {/* card */}
-            {prodotti.map((prodotto, index) =>{
+            {prodottiFiltrati.map((prodotto, index) =>{
             const { id } = prodotto;
             return (
                 <div className="col-3 py-4" key={id}>

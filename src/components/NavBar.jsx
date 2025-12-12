@@ -19,7 +19,7 @@ export default function NavBar() {
     ];
 
     const { budgetMode, attivaBudget, disattivaBudget } = useBudget();
-  console.log("BUDGET MODE NAVBAR:", budgetMode);
+
 
     return (
         <>
